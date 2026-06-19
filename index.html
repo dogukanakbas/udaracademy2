@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Gelişmiş Siber Güvenlik ve Teknoloji Eğitim Merkezi." />
+    <title>Udar Academy | Eğitim Platformu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <!-- Background Canvas -->
+    <canvas id="webgl-canvas"></canvas>
+
+    <!-- Overlay UI -->
+    <div class="overlay-ui top-left">
+      <div class="sys-status"><span data-i18n="sysStatus">SİSTEM_DURUMU:</span> <span class="status-ok" data-i18n="statusOk">ÇEVRİMİÇİ</span></div>
+    </div>
+    <div class="overlay-ui bottom-right">
+      <div class="sys-coord"><span data-i18n="coord">KOORD:</span> 34.0522° N, 118.2437° W</div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="main-nav">
+      <div class="logo">UDAR<span class="text-red">ACADEMY</span></div>
+      <nav>
+        <a href="#hero" data-i18n="navInit">BAŞLAT</a>
+        <a href="#egitimler" data-i18n="navEgitimler">EĞİTİMLER</a>
+        <a href="#delivery" data-i18n="navDelivery">YÖNTEM</a>
+        <a href="#platform" data-i18n="navPlatform">PLATFORM</a>
+        <a href="#why-us" data-i18n="navWhy">NEDEN BİZ</a>
+        <a href="#contact" data-i18n="navComm">İLETİŞİM</a>
+      </nav>
+      <div class="header-actions">
+        <select id="lang-switcher" class="lang-switcher">
+          <option value="tr">TR</option>
+          <option value="en">EN</option>
+        </select>
+        <a href="#contact" class="btn-primary" data-i18n="accessPortal">KAYIT_OL</a>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Section -->
+      <section id="hero" class="panel">
+        <div class="content-wrapper hero-content">
+          <p class="eyebrow" data-i18n="heroEyebrow">SİSTEM.BAŞLATILIYOR()</p>
+          <h1 class="glitch" data-i18n="heroTitle" data-text="GELECEĞİN TEKNOLOJİ LİDERLERİNİ YETİŞTİRİYORUZ.">GELECEĞİN TEKNOLOJİ LİDERLERİNİ YETİŞTİRİYORUZ.</h1>
+          <p class="subtitle" data-i18n="heroSubtitle">Siber Güvenlik, Yazılım, IoT ve Robotik alanlarında uçtan uca eğitim çözümleri.</p>
+          <div class="hero-actions">
+            <a href="#egitimler" class="btn-primary" data-i18n="exploreServices">EĞİTİMLERİ_KEŞFET</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Training Programs -->
+      <section id="egitimler" class="panel">
+        <div class="content-wrapper">
+          <div class="section-header">
+            <h2 data-i18n="secTitle">EĞİTİM_PROGRAMLARIMIZ</h2>
+            <div class="line"></div>
+          </div>
+          <div class="grid">
+            <div class="card reveal-up">
+              <div class="card-icon">[SEC]</div>
+              <h3 data-i18n="sec1Title">Siber Güvenlik Eğitimi</h3>
+              <p data-i18n="sec1Desc">Etik hackerlık, sızma testi, ağ ve web güvenliği konularında uygulamalı sanal laboratuvar eğitimleri.</p>
+            </div>
+            <div class="card reveal-up">
+              <div class="card-icon">[DEV]</div>
+              <h3 data-i18n="sec2Title">Yazılım Geliştirme Eğitimi</h3>
+              <p data-i18n="sec2Desc">Modern web teknolojileri, backend mimarileri ve güvenli kodlama standartlarıyla sıfırdan ileri seviye yazılım.</p>
+            </div>
+            <div class="card reveal-up">
+              <div class="card-icon">[IOT]</div>
+              <h3 data-i18n="sec3Title">IoT Sistemleri Eğitimi</h3>
+              <p data-i18n="sec3Desc">Akıllı cihazlar, gömülü sistemler ve endüstriyel IoT ağları için donanım ve yazılım odaklı eğitimler.</p>
+            </div>
+            <div class="card reveal-up">
+              <div class="card-icon">[RBT]</div>
+              <h3 data-i18n="sec4Title">Robotik ve Otonom Sistemler</h3>
+              <p data-i18n="sec4Desc">Yapay zeka entegrasyonu, otonom hareket sistemleri ve robotik programlama üzerine pratik atölyeler.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Delivery Methods -->
+      <section id="delivery" class="panel">
+        <div class="content-wrapper">
+          <div class="section-header">
+            <h2 data-i18n="deliveryTitle">EĞİTİM_YÖNTEMLERİMİZ</h2>
+            <div class="line"></div>
+          </div>
+          <div class="flex-layout">
+            <div class="text-col reveal-left">
+              <h3 data-i18n="deliverySubtitle">Sınırları Kaldırıyoruz.</h3>
+              <p data-i18n="deliveryDesc">Eğitimlerimizi öğrencilerin ihtiyaçlarına göre ister tamamen online sanal laboratuvarlarda, ister merkezimizde yüz yüze fiziksel donanımlarla sunuyoruz.</p>
+              <ul class="tech-list">
+                <li><span class="bullet">></span> <span data-i18n="deliveryList1">Online Canlı Sanal Sınıflar</span></li>
+                <li><span class="bullet">></span> <span data-i18n="deliveryList2">Bulut Tabanlı Sanal Laboratuvarlar</span></li>
+                <li><span class="bullet">></span> <span data-i18n="deliveryList3">Yüz Yüze Fiziksel Atölyeler</span></li>
+                <li><span class="bullet">></span> <span data-i18n="deliveryList4">Birebir Mentorluk Seansları</span></li>
+              </ul>
+            </div>
+            <div class="visual-col reveal-right">
+              <div class="code-block">
+                <div class="code-header">
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="filename">student_connect.js</span>
+                </div>
+                <pre><code>function joinClassroom(student) {
+  if(student.mode === 'ONLINE') {
+    LabEnv.connect({ secure: true });
+    VoiceChannel.join();
+  } else if (student.mode === 'IN_PERSON') {
+    HardwareNode.grantAccess();
+    Mentor.assign(student);
+  }
+}</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- New Educational Platform -->
+      <section id="platform" class="panel">
+        <div class="content-wrapper">
+          <div class="section-header">
+            <h2 data-i18n="platformTitle">YENİ_EĞİTİM_PLATFORMUMUZ</h2>
+            <div class="line"></div>
+          </div>
+          <div class="grid">
+            <div class="card border-red reveal-up">
+              <div class="card-icon">[BETA]</div>
+              <h3 class="text-red" data-i18n="platform1Title">Çok Yakında Yayında!</h3>
+              <p data-i18n="platform1Desc">Öğrenme sürecinizi oyunlaştıran, ilerlemenizi takip eden ve 7/24 erişilebilir sanal siber laboratuvarlar sunan özel eğitim platformumuz inşa ediliyor.</p>
+            </div>
+            <div class="card reveal-up">
+              <div class="card-icon">[MOD]</div>
+              <h3 data-i18n="platform2Title">İnteraktif Modüller</h3>
+              <p data-i18n="platform2Desc">Teorik bilgiyi anında pratiğe dökebileceğiniz kodlama ve güvenlik test alanları.</p>
+            </div>
+            <div class="card reveal-up">
+              <div class="card-icon">[CTF]</div>
+              <h3 data-i18n="platform3Title">Gerçek Dünya Senaryoları</h3>
+              <p data-i18n="platform3Desc">CTF (Bayrağı Yakala) tarzı yarışmalar ve gerçek siber saldırı simülasyonları.</p>
+            </div>
+            <div class="card reveal-up">
+              <div class="card-icon">[VIP]</div>
+              <h3 data-i18n="platform4Title">Erken Erişim</h3>
+              <p data-i18n="platform4Desc">Platformumuz açıldığında ilk deneyenlerden olmak için bekleme listesine katılın.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Choose Us -->
+      <section id="why-us" class="panel">
+        <div class="content-wrapper">
+          <div class="section-header">
+            <h2 data-i18n="whyTitle">NEDEN_BİZİ_SEÇMELİSİNİZ</h2>
+            <div class="line"></div>
+          </div>
+          <div class="grid three-col">
+            <div class="stat-card reveal-up">
+               <div class="stat-number">01</div>
+               <h4 data-i18n="why1Title">Pratik Odaklı Yaklaşım</h4>
+               <p data-i18n="why1Desc">Slaytlara değil, gerçek donanımlara ve sanal makinelere dokunarak, hata yaparak öğrenirsiniz.</p>
+            </div>
+            <div class="stat-card reveal-up" style="transition-delay: 0.1s;">
+               <div class="stat-number">02</div>
+               <h4 data-i18n="why2Title">Uzman Eğitmen Kadrosu</h4>
+               <p data-i18n="why2Desc">Eğitmenlerimiz sektörde aktif olarak çalışan, saha tecrübesi yüksek profesyonellerdir.</p>
+            </div>
+            <div class="stat-card reveal-up" style="transition-delay: 0.2s;">
+               <div class="stat-number">03</div>
+               <h4 data-i18n="why3Title">Sürekli Gelişim & Topluluk</h4>
+               <p data-i18n="why3Desc">Mezuniyet sonrasında da devam eden destek, özel Discord topluluğu ve kariyer rehberliği.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="panel">
+        <div class="content-wrapper">
+          <div class="section-header">
+            <h2 data-i18n="contactTitle">BAĞLANTI_KUR</h2>
+            <div class="line"></div>
+          </div>
+          <div class="flex-layout">
+            <div class="text-col reveal-left">
+              <h3 data-i18n="contactSubtitle">Kayıt ve İletişim Kanalı</h3>
+              <p data-i18n="contactDesc">Eğitim programlarımıza başvurmak, platform bekleme listesine katılmak veya kurumunuza özel eğitim talebinde bulunmak için formu doldurun.</p>
+              <div class="contact-info">
+                <p><span class="label" data-i18n="contactLabel1">DÜĞÜM:</span> HQ_ALPHA</p>
+                <p><span class="label" data-i18n="contactLabel2">ŞİFRELEME:</span> <span data-i18n="contactVal2">AKTİF (RSA-4096)</span></p>
+                <p><span class="label" data-i18n="contactLabel3">DURUM:</span> <span data-i18n="contactVal3">GİRDİ BEKLENİYOR...</span></p>
+              </div>
+            </div>
+            <div class="visual-col reveal-right">
+              <form class="contact-form" onsubmit="event.preventDefault();">
+                <div class="input-group">
+                  <label for="name" data-i18n="formName">KİMLİK_AD</label>
+                  <input type="text" id="name" required placeholder="Adınızı giriniz" data-i18n-ph="formNamePH">
+                </div>
+                <div class="input-group">
+                  <label for="email" data-i18n="formEmail">İLETİŞİM_BAĞLANTISI</label>
+                  <input type="email" id="email" required placeholder="E-posta adresinizi giriniz" data-i18n-ph="formEmailPH">
+                </div>
+                <div class="input-group">
+                  <label for="message" data-i18n="formMessage">İLETİM_VERİSİ</label>
+                  <textarea id="message" rows="4" required placeholder="Hangi eğitimle ilgilendiğinizi belirtiniz" data-i18n-ph="formMessagePH"></textarea>
+                </div>
+                <button type="submit" class="btn-primary" data-i18n="formSubmit">VERİYİ_İLET</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="content-wrapper">
+        <div class="footer-grid">
+           <div class="footer-col">
+             <div class="logo">UDAR<span class="text-red">ACADEMY</span></div>
+             <p data-i18n="footerTitle">Gelişmiş Teknoloji Eğitimleri</p>
+           </div>
+           <div class="footer-col">
+             <p>&copy; 2026 UDAR ACADEMY.<br><span data-i18n="footerRights">TÜM HAKLARI SAKLIDIR.</span><br><span data-i18n="footerTransmission">GÜVENLİ İLETİM.</span></p>
+           </div>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
