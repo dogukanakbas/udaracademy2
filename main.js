@@ -207,3 +207,67 @@ setInterval(() => {
     coordEl.innerText = `COORD: ${lat}° N, ${lon}° W`
   }
 }, 3000)
+
+// --- Contact Form Submission ---
+const contactForm = document.querySelector('.contact-form');
+const submitBtn = document.querySelector('.submit-btn');
+
+if (contactForm && submitBtn) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    
+    const originalText = submitBtn.innerText;
+    const originalBg = submitBtn.style.backgroundColor;
+    const originalColor = submitBtn.style.color;
+
+    submitBtn.innerText = "İLETİLİYOR...";
+    submitBtn.disabled = true;
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/info@udaracademy.com", {
+        method: "POST",
+        headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+            name: name,
+            email: email,
+            message: message,
+            _subject: "Udar Academy - Yeni Başvuru!"
+        })
+      });
+
+      if (response.ok) {
+        submitBtn.innerText = "İLETİM_BAŞARILI";
+        submitBtn.style.backgroundColor = "#00ff66";
+        submitBtn.style.color = "#000";
+        contactForm.reset();
+        
+        setTimeout(() => {
+          submitBtn.innerText = originalText;
+          submitBtn.style.backgroundColor = originalBg;
+          submitBtn.style.color = originalColor;
+          submitBtn.disabled = false;
+        }, 3000);
+      } else {
+        throw new Error('Network error');
+      }
+    } catch (error) {
+      console.error('Hata:', error);
+      submitBtn.innerText = "HATA_OLUŞTU";
+      submitBtn.style.backgroundColor = "red";
+      
+      setTimeout(() => {
+        submitBtn.innerText = originalText;
+        submitBtn.style.backgroundColor = originalBg;
+        submitBtn.style.color = originalColor;
+        submitBtn.disabled = false;
+      }, 3000);
+    }
+  });
+}
