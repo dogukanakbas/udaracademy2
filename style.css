@@ -560,7 +560,6 @@ footer {
   .header-actions { width: 100%; justify-content: center; }
   .overlay-ui { display: none; }
   .footer-grid { flex-direction: column; text-align: center; gap: 2rem; }
-  .logo img { height: 60px !important; }
   .panel { padding: 6rem 0; }
 }
 
