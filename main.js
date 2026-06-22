@@ -91,7 +91,7 @@ particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3
 // Material
 const particlesMaterial = new THREE.PointsMaterial({
   size: 0.1,
-  color: 0xff003c, // Cyberpunk red
+  color: 0x00e5ff, // Cyber cyan
   transparent: true,
   opacity: 0.8,
   blending: THREE.AdditiveBlending
